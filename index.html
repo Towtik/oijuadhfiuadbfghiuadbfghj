@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abnormální Raci | Oficiální Web</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #2b2b2b;
+            background-image: repeating-linear-gradient(
+                -45deg,
+                #222,
+                #222 10px,
+                #2b2b2b 10px,
+                #2b2b2b 20px
+            );
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            color: #333;
+        }
+
+
+        #wrapper {
+            width: 95%;
+            max-width: 900px;
+            margin: 15px auto;
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.8);
+            overflow: hidden;
+        }
+
+
+        header {
+            background: #111;
+            background: linear-gradient(to bottom, #4a4a4a 0%, #2b2b2b 50%, #111111 51%, #000000 100%);
+            padding: 20px 15px;
+            text-align: center;
+            border-bottom: 5px solid #ff0055;
+            position: relative;
+        }
+
+
+        .logo {
+            width: 120px;
+            max-width: 40%;
+            -webkit-box-reflect: below -10px -webkit-gradient(linear, right top, right bottom, from(transparent), color-stop(40%, transparent), to(rgba(255, 255, 255, 0.4)));
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            color: white;
+            font-size: 28px;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+            letter-spacing: -1px;
+        }
+
+        .beta-badge {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            background: #ff0055;
+            color: white;
+            font-weight: bold;
+            font-size: 11px;
+            padding: 4px 8px;
+            border-radius: 20px;
+            transform: rotate(15deg);
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+            border: 2px solid white;
+        }
+
+
+        nav {
+            background: #e0e0e0;
+            padding: 10px 10px 0 10px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .nav-tabs {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+
+        .nav-tabs li {
+            flex-grow: 1;
+            text-align: center;
+        }
+
+        .nav-tabs li a {
+            display: block;
+            padding: 10px 12px;
+            background: linear-gradient(to bottom, #ffffff 0%, #f1f1f1 50%, #e1e1e1 51%, #f6f6f6 100%);
+            border: 1px solid #bbb;
+            border-bottom: none;
+            border-radius: 8px 8px 0 0;
+            color: #333;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 13px;
+            text-shadow: 1px 1px 0px #fff;
+        }
+
+        .nav-tabs li a:hover {
+            background: linear-gradient(to bottom, #ffffff 0%, #ffffff 50%, #f1f1f1 51%, #ffffff 100%);
+            color: #ff0055;
+        }
+
+        .content {
+            padding: 20px 15px;
+            min-height: 350px;
+            background: url('https://www.transparenttextures.com/patterns/cubes.png');
+        }
+
+        .welcome-box {
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: inset 0px 0px 10px rgba(0,0,0,0.05);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #ff0055;
+            border-bottom: 2px dotted #ccc;
+            padding-bottom: 5px;
+            margin-top: 0;
+            font-size: 20px;
+        }
+
+
+        .btn-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .btn-glossy {
+            display: inline-block;
+            background: linear-gradient(to bottom, #ff4c81 0%, #ff0055 50%, #cc0044 51%, #ff0055 100%);
+            color: white;
+            padding: 12px 20px;
+            border: 1px solid #990033;
+            border-radius: 20px;
+            font-size: 15px;
+            font-weight: bold;
+            text-decoration: none;
+            cursor: pointer;
+            box-shadow: 0px 4px 6px rgba(0,0,0,0.3), inset 0px 1px 0px rgba(255,255,255,0.5);
+            text-shadow: -1px -1px 0px rgba(0,0,0,0.4);
+            user-select: none;
+        }
+
+        .btn-glossy:hover {
+            background: linear-gradient(to bottom, #ff6695 0%, #ff1a66 50%, #e6004c 51%, #ff1a66 100%);
+        }
+
+
+        .btn-spotify {
+            background: linear-gradient(to bottom, #1ed760 0%, #1db954 50%, #179643 51%, #1db954 100%);
+            border-color: #127735;
+        }
+        .btn-spotify:hover {
+            background: linear-gradient(to bottom, #2ced71 0%, #1ed760 50%, #1db954 51%, #1ed760 100%);
+        }
+
+        .btn-youtube {
+            background: linear-gradient(to bottom, #ff4d4d 0%, #ff0000 50%, #cc0000 51%, #ff0000 100%);
+            border-color: #990000;
+        }
+        .btn-youtube:hover {
+            background: linear-gradient(to bottom, #ff6666 0%, #ff3333 50%, #e60000 51%, #ff3333 100%);
+        }
+
+
+        footer {
+            background: #e0e0e0;
+            text-align: center;
+            padding: 15px;
+            font-size: 11px;
+            color: #666;
+            border-top: 1px solid #ccc;
+            line-height: 1.4;
+        }
+
+
+        #lightbox-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 999;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        #lightbox-content {
+            position: relative;
+            margin: 20px auto;
+            width: 100%;
+            max-width: 550px;
+            max-height: 90vh; /* Prevents it from going offscreen */
+            overflow-y: auto; /* Scrollbar inside if song list is long */
+            background: #fff;
+            padding: 15px;
+            border: 6px solid #333;
+            border-radius: 10px;
+            box-shadow: 0px 0px 30px rgba(0,0,0,1);
+            box-sizing: border-box;
+        }
+
+        .close-btn {
+            float: right;
+            background: #333;
+            color: white;
+            border: none;
+            padding: 6px 12px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        .close-btn:hover { background: #ff0055; }
+
+        .album-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        @media (min-width: 480px) {
+            .album-grid {
+                flex-direction: row;
+            }
+        }
+
+        .album-item {
+            text-align: center;
+            flex: 1;
+            padding: 15px;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            cursor: pointer;
+            background: linear-gradient(to bottom, #fff 0%, #f9f9f9 100%);
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 15px;
+            text-align: left;
+        }
+
+        @media (min-width: 480px) {
+            .album-item {
+                flex-direction: column;
+                text-align: center;
+                padding: 10px;
+            }
+        }
+
+        .album-item:hover {
+            border-color: #ff0055;
+            background: #fff0f5;
+        }
+
+        .album-item img {
+            width: 70px;
+            height: 70px;
+            border: 3px solid #ccc;
+        }
+
+        @media (min-width: 480px) {
+            .album-item img {
+                width: 100px;
+                height: 100px;
+                margin-bottom: 10px;
+            }
+        }
+
+        .song-list-container {
+            display: none;
+            overflow-x: auto;
+        }
+
+        .song-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        .song-table th, .song-table td {
+            border-bottom: 1px solid #eee;
+            padding: 8px;
+            text-align: left;
+            font-size: 13px;
+        }
+
+        .song-table tr:hover {
+            background-color: #f9f9f9;
+        }
+
+        .btn-download-small {
+            background: linear-gradient(to bottom, #88cc00 0%, #669900 50%, #446600 51%, #669900 100%);
+            border: 1px solid #334d00;
+            color: white;
+            padding: 6px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 11px;
+            font-weight: bold;
+            text-shadow: 1px 1px 0px rgba(0,0,0,0.5);
+            white-space: nowrap;
+        }
+        .btn-download-small:hover { filter: brightness(1.2); }
+
+        #back-btn {
+            background: #ccc; 
+            border: 1px solid #999; 
+            padding: 6px 12px; 
+            cursor: pointer; 
+            border-radius: 4px; 
+            display: none; 
+            margin-bottom: 15px;
+            font-size: 13px;
+        }
+
+        /* css zabij mě */
+        #notify-bubble {
+            position: fixed; 
+            bottom: 20px; 
+            left: 5%;
+            right: 5%;
+            background: #fffde6; 
+            border: 2px solid #e6db55; 
+            padding: 12px; 
+            border-radius: 8px; 
+            box-shadow: 0px 4px 10px rgba(0,0,0,0.3); 
+            display: none; 
+            z-index: 1000; 
+            font-weight: bold; 
+            color: #333;
+            font-size: 14px;
+            text-align: center;
+        }
+        
+        @media (min-width: 480px) {
+            #notify-bubble {
+                left: auto;
+                right: 20px;
+                width: auto;
+                max-width: 300px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div id="wrapper">
+        <header>
+            <div class="beta-badge">OFFICIAL</div>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6c/Abnormalniraci.png" alt="Abnormální Raci Logo" class="logo" onerror="this.style.display='none'">
+            <h1>Abnormální Raci</h1>
+        </header>
+
+        <nav>
+            <ul class="nav-tabs">
+                <li><a href="/">Domů</a></li>
+                <li><a href="/racihub">RaciHub</a></li>
+                <li><a href="/operatorpenetrator">Operátor Penetrátor</a></li>
+                <li><a href="https://rakcyklopedie.cfd/" target="_blank">RakCyklopedie</a></li>
+            </ul>
+        </nav>
+
+        <div class="content">
+            <div class="welcome-box">
+                <h2>Vítejte na naši stránce!</h2>
+                <p>Tady si můžete stáhnout naše písničky.</p>
+                <div class="btn-container">
+                    <button class="btn-glossy" onclick="openLightbox()">Přehrávač & Stahování</button>
+                    <a href="https://open.spotify.com/artist/7dfODZYsWLB1RvEpEnJfQV?si=mTl3jXyJRfeSyLui-UuGWQ" target="_blank" class="btn-glossy btn-spotify">Spotify</a>
+                    <a href="https://youtube.com/@abnormalniraci/" target="_blank" class="btn-glossy btn-youtube">YouTube</a>
+                </div>
+            </div>
+
+            <div>
+                <h3 style="font-size: 16px;">Poslední novinky:</h3>
+                <ul style="font-size: 13px; padding-left: 20px;">
+                    <li style="margin-bottom: 8px;"><strong>12. 08. 2067:</strong> Přidali jsme novou fotku z koncertu v altánku.</li>
+                    <li><strong>05. 08. 2067:</strong> Dnes byla spuštěna RakCyklopedie. Nezapomeňte si ji přidat do záložek (Ctrl+D)!</li>
+                </ul>
+            </div>
+        </div>
+
+        <footer>
+            Copyright &copy; 2026 Abnormální Raci.<br>
+         abnormalniraci.lol
+        </footer>
+    </div>
+
+    <div id="lightbox-overlay">
+        <div id="lightbox-content">
+            <button class="close-btn" onclick="closeLightbox()">Zavřít [X]</button>
+            <h2 id="lb-title" style="margin-top:0; font-size: 20px;">Diskografie</h2>
+            
+            <button id="back-btn" onclick="showAlbums()">&laquo; Zpět na alba</button>
+
+            <div class="album-grid" id="album-view">
+            </div>
+
+            <div class="song-list-container" id="song-view">
+                <table class="song-table" id="song-table-body">
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div id="notify-bubble">Stahování zahájeno...</div>
+
+    <script>
+        // ----------------------------------------------------------------------------
+        // mrdko to so pisnicky ja se chci zabit uz 20 hodin na to mrdám vole pičo
+        // ----------------------------------------------------------------------------
+
+        const borecSongs = [
+            { title: "Bezdomovcovo Podpaží", file: "/songs/Bezdomovcovo Podpaží.mp3" },
+            { title: "Husinu mám na péru", file: "/songs/Husinu mám na péru.mp3" },
+            { title: "Chčiju ti na psa", file: "/songs/Chčiju ti na psa.mp3" },
+            { title: "Jsem tuff boy", file: "/songs/Jsem tuff boy.mp3" },
+            { title: "Mareček a zvonkohra", file: "/songs/Mareček a zvonkohra.mp3" },
+            { title: "Pozor do Zadu Dvojka", file: "/songs/Pozor do Zadu Dvojka.mp3" },
+            { title: "Prostějovská Píseň", file: "/songs/Prostějovská Píseň.mp3" },
+            { title: "Předkožková Lahůdka", file: "/songs/Předkožková Lahůdka.mp3" },
+            { title: "Stříkáme všude", file: "/songs/Stříkáme všude.mp3" },
+            { title: "Vánoční hajzl", file: "/songs/Vánoční hajzl.mp3" },
+            { title: "Zánět dělohy moje fena má", file: "/songs/Zánět dělohy moje fena má.mp3" }
+        ]; 
+
+        const okurkySongs = [
+            { title: "Péro na USB-C", file: "/songs/Péro na USB-C.mp3" },
+            { title: "Emocionální Porod", file: "/songs/Emocionální Porod.mp3" },
+            { title: "Prdím ti za zády", file: "/songs/Prdím ti za zády.mp3" },
+            { title: "Prdící Stroj", file: "/songs/Prdící Stroj.mp3" },
+            { title: "Hovniválská Láska", file: "/songs/Hovniválská Láska.mp3" },
+            { title: "Moje Svíce Hoří", file: "/songs/Moje Svíce Hoří.mp3" },
+            { title: "Uspokující Brečení", file: "/songs/Uspokující Brečení.mp3" },
+            { title: "Indská Válka", file: "/songs/Indská Válka.mp3" },
+            { title: "Ultimátní Homokláda", file: "/songs/Ultimátní Homokláda.mp3" },
+            { title: "Vons na Péro", file: "/songs/Vons na Péro.mp3" }
+        ]; 
+
+        const kramySongs = [
+            { title: "Brinzová", file: "/songs/Brinzová.mp3" },
+            { title: "Prdím do Vany", file: "/songs/Prdím do Vany.mp3" },
+            { title: "Slovenští Cikáni", file: "/songs/Slovenští Cikáni.mp3" },
+            { title: "Ty jeden fakíre", file: "/songs/Ty jeden fakíre.mp3" },
+            { title: "DNAová Komora Smrti", file: "/songs/DNAová Komora Smrti.mp3" },
+            { title: "Nehraj si se mnou", file: "/songs/Nehraj si se mnou.mp3" },
+            { title: "Ono mi to pláče", file: "/songs/Ono mi to pláče.mp3" },
+            { title: "Do Vlasů", file: "/songs/Do Vlasů.mp3" },
+            { title: "Roztrhlo se to", file: "/songs/Roztrhlo se to.mp3" },
+            { title: "Špagetky Jako Pagetky", file: "/songs/Špagetky Jako Pagetky.mp3" }
+        ]; 
+
+        // ok už se chci zabít míň
+
+        const discography = [
+            {
+                id: 'kramy',
+                title: 'Čistokrevné Krámy',
+                year: '2026',
+                cover: 'https://upload.wikimedia.org/wikipedia/commons/6/6c/Abnormalniraci.png',
+                songs: kramySongs
+            },
+            {
+                id: 'borec',
+                title: 'Borec na Konec',
+                year: '2026',
+                cover: 'https://upload.wikimedia.org/wikipedia/commons/6/6c/Abnormalniraci.png',
+                songs: borecSongs
+            },
+            {
+                id: 'okurky',
+                title: 'Honění Mastné Okurky',
+                year: '2025',
+                cover: 'https://upload.wikimedia.org/wikipedia/commons/6/6c/Abnormalniraci.png',
+                songs: okurkySongs
+            }
+        ];
+
+
+        const overlay = document.getElementById('lightbox-overlay');
+        const albumView = document.getElementById('album-view');
+        const songView = document.getElementById('song-view');
+        const songTable = document.getElementById('song-table-body');
+        const lbTitle = document.getElementById('lb-title');
+        const backBtn = document.getElementById('back-btn');
+        const notifyBubble = document.getElementById('notify-bubble');
+
+        function openLightbox() {
+            overlay.style.display = 'block';
+            document.body.style.overflow = 'hidden'; 
+            showAlbums();
+        }
+
+        function closeLightbox() {
+            overlay.style.display = 'none';
+            document.body.style.overflow = ''; 
+        }
+
+        function showAlbums() {
+            lbTitle.innerText = "Vyberte si album";
+            albumView.style.display = 'flex';
+            songView.style.display = 'none';
+            backBtn.style.display = 'none';
+
+            albumView.innerHTML = '';
+            discography.forEach(album => {
+                const div = document.createElement('div');
+                div.className = 'album-item';
+                div.onclick = () => showSongs(album.id);
+                div.innerHTML = `
+                    <img src="${album.cover}" alt="Cover" onerror="this.src=''; this.style.background='#ccc';">
+                    <div>
+                        <strong style="font-size: 15px;">${album.title}</strong><br>
+                        <span style="font-size:12px; color:#666;">(${album.year})</span>
+                    </div>
+                `;
+                albumView.appendChild(div);
+            });
+        }
+
+        function showSongs(albumId) {
+            const album = discography.find(a => a.id === albumId);
+            if (!album) return;
+
+            lbTitle.innerText = album.title;
+            albumView.style.display = 'none';
+            songView.style.display = 'block';
+            backBtn.style.display = 'inline-block';
+
+            songTable.innerHTML = `
+                <tr>
+                    <th style="width: 15%;">Trk</th>
+                    <th style="width: 55%;">Název Skladby</th>
+                    <th style="width: 30%; text-align: center;">Akce</th>
+                </tr>
+            `;
+
+            album.songs.forEach((song, index) => {
+                const trkNum = (index + 1).toString().padStart(2, '0');
+                
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td>${trkNum}</td>
+                    <td><strong>${song.title}</strong>.mp3</td>
+                    <td style="text-align: center;">
+                        <button class="btn-download-small" onclick="downloadMp3('${song.title}', '${song.file}')">↓ Stáhnout</button>
+                    </td>
+                `;
+                songTable.appendChild(tr);
+            });
+        }
+
+        function downloadMp3(songTitle, fileUrl) {
+
+            notifyBubble.innerText = `Stahuji: ${songTitle}.mp3 ...`;
+            notifyBubble.style.display = 'block';
+            
+            setTimeout(() => {
+                notifyBubble.style.display = 'none';
+            }, 3000);
+
+
+            const downloadLink = document.createElement('a');
+            downloadLink.href = fileUrl;
+            downloadLink.download = `${songTitle}.mp3`;
+            document.body.appendChild(downloadLink);
+            downloadLink.click();
+            document.body.removeChild(downloadLink);
+        }
+
+
+        overlay.addEventListener('click', function(e) {
+            if (e.target === overlay) {
+                closeLightbox();
+            }
+        });
+    </script>
+</body>
+</html>
